@@ -67,16 +67,11 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .section { padding-block: var(--section-y); position: relative; }
-/* R1 madde 4 — beyaz-mavi alternans belirgin: beyaz bölümler saf beyaz,
-   mavi bölümler --surface-blue; mavi bölümün üst kenarında beyazdan içine
-   eriyen 96px'lik geçiş şeridi (geçiş hissedilir, koyu banda çıkış keskin). */
+/* R2 madde 1 — bölüm geçişleri KESKİN (Yasin Bey): beyaz/mavi alternans
+   düz zeminlerle, kenarlar net; yumuşatma şeridi yok. */
 .section--white { background: var(--surface); }
 .section--tint,
-.section--soft {
-  background:
-    linear-gradient(180deg, var(--surface) 0%, rgba(255, 255, 255, 0) 96px),
-    var(--surface-blue);
-}
+.section--soft { background: var(--surface-blue); }
 
 /* Koyu bölüm — arka planda loop video + lacivert overlay (açık/koyu ritmi) */
 .section--dark {
@@ -712,24 +707,36 @@ body.nav-open .nav-toggle span::after  { transform: translate(-50%, -50%) rotate
      .page-main'e footer yüksekliği kadar margin-bottom açar */
   body.has-reveal .site-footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 1; }
 }
+/* R2 madde 2 — Milli Müdafaa deseni: tek merkezî dikey kolon
+   (logo → tanım → yatay link satırı → yatay iletişim), her katman ortalı */
 .footer-top {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: var(--space-8);
-  padding-bottom: var(--space-8);
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding-bottom: var(--space-7);
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-.footer-brand img { height: 40px; width: auto; margin-bottom: var(--space-5); }
-.footer-slogan { max-width: 40ch; font-size: var(--fs-sm); line-height: 1.6; color: rgba(255,255,255,0.72); }
-.footer-col h4 {
-  color: #fff; font-size: 0.82rem; letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase; margin-bottom: var(--space-5); font-family: var(--font-body); font-weight: var(--fw-bold);
+.footer-logo { height: 40px; width: auto; margin-bottom: var(--space-5); }
+.footer-slogan {
+  max-width: 52ch; font-size: var(--fs-sm); line-height: 1.6;
+  color: rgba(255,255,255,0.72); margin-bottom: var(--space-6);
 }
-.footer-col ul { display: flex; flex-direction: column; gap: var(--space-3); }
-.footer-col a, .footer-contact a, .footer-contact span { font-size: var(--fs-sm); color: rgba(255,255,255,0.74); transition: color var(--dur) var(--ease); }
-.footer-col a:hover { color: var(--ai-cyan); }
-.footer-contact { display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--fs-sm); }
-.footer-contact li { display: flex; align-items: center; gap: var(--space-3); }
+.footer-links {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  column-gap: var(--space-5); row-gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.footer-links a {
+  font-size: var(--fs-sm); font-weight: var(--fw-semi); color: rgba(255,255,255,0.88);
+  transition: color var(--dur) var(--ease);
+}
+.footer-links a:hover { color: var(--ai-cyan); }
+.footer-contact {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  column-gap: var(--space-6); row-gap: var(--space-3);
+  font-size: var(--fs-sm);
+}
+.footer-contact a, .footer-contact span { font-size: var(--fs-sm); color: rgba(255,255,255,0.74); transition: color var(--dur) var(--ease); }
+.footer-contact li { display: flex; align-items: center; gap: var(--space-2); }
 .footer-contact svg { width: 16px; height: 16px; flex: none; color: #8FE4FF; }
 .footer-contact a:hover { color: var(--ai-cyan); }
 
@@ -782,8 +789,6 @@ body.nav-open .nav-toggle span::after  { transform: translate(-50%, -50%) rotate
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .hero-inner { min-height: min(78vh, 640px); }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: var(--space-7); }
-  .footer-brand { grid-column: 1 / -1; }
   .carousel-track { grid-auto-columns: calc((100% - var(--space-5)) / 2); }   /* 2'li görünüm */
   .partners-track { grid-auto-columns: calc((100% - 2 * var(--space-5)) / 3); }
   .lab-card { grid-template-columns: 44px minmax(200px, 260px) 1fr; }
@@ -836,8 +841,8 @@ body.nav-open .nav-toggle span::after  { transform: translate(-50%, -50%) rotate
 @media (max-width: 620px) {
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .hero-actions .btn { flex: 1 1 auto; }
-  .footer-top { grid-template-columns: 1fr; gap: var(--space-6); }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  /* Ortalanmış footer hiyerarşisi mobilde de merkezde kalır */
+  .footer-bottom { flex-direction: column; align-items: center; justify-content: center; text-align: center; }
   .brand img { height: 40px; }
   /* Carousel mobil: 1 kart + sonrakinin kenarı görünür (kaydırma ipucu) */
   .carousel-track { grid-auto-columns: 86%; }
