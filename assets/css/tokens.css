@@ -1,0 +1,133 @@
+/* ==========================================================================
+   DESİL — Design Tokens (KANONİK)
+   --------------------------------------------------------------------------
+   Bu dosya tasarım sisteminin tek kaynağıdır. Wave 2'de tüm iç sayfalar bu
+   token'ları kullanır. Renk/tipografi/spacing SADECE buradan türetilir.
+
+   Palet kararı (Beyar, 2026-07-04): kurumsal ana renk = logonun gerçek rengi
+   canlı lacivert #10367D. "Logo neyse renk o." Brief'in yeşil paleti artık
+   esas değil. AI Cyan (#2AD4FF) sınırlı mikro vurgu olarak korunur.
+   ========================================================================== */
+
+:root {
+  /* --- Marka paleti (logo esaslı, lacivert-cyan ailesi) ------------------
+     Yeşil YOK. Açık zemin ilkesi ve "aşırı karanlık olmasın" kuralı geçerli;
+     yalnız hero (video-üstü) ve koyu bloklar lacivert zeminlidir. */
+  --brand:      #10367D;  /* Logo laciverti · primer CTA · link · vurgu       */
+  --brand-700:  #0D2C69;  /* Hover derinliği                                  */
+  --brand-deep: #0A2450;  /* Footer · koyu bloklar · hero overlay tabanı      */
+  --navy:       #16233F;  /* Başlık ve gövde metni · kart çerçeve tonu        */
+  --ai-cyan:    #2AD4FF;  /* SINIRLI: ikon/veri-noktası mikro parıltısı       */
+
+  /* Açık, buz-mavisi/lacivert tınılı zeminler (yeşil-mint yerine) */
+  --ground:      #F7F9FC;  /* Sayfa arka planı (beyazdan yumuşak, mavi tın)   */
+  --surface:     #FFFFFF;  /* kart yüzeyi                                     */
+  --surface-alt: #EEF3FB;  /* bir tık koyu bölüm zemini                       */
+  --brand-soft:  #EAF1FB;  /* kart/Lab zeminleri (eski "mint" rolü)           */
+  --brand-tint:  #DEE9FA;  /* ince tint · ikon kutusu kenarı                  */
+  --brand-wash:  #F0F5FC;  /* nav/buton hover · açık bölüm zemini             */
+
+  /* Metin tonları */
+  --white:     #FFFFFF;
+  --ink:       var(--navy);      /* birincil metin                            */
+  --ink-soft:  #45566E;          /* ikincil metin                             */
+  --ink-muted: #6C7B90;          /* etiket / yardımcı metin                   */
+  --line:      #DCE5F2;          /* hairline / kenarlık                       */
+  --line-strong: #C4D2E8;
+
+  /* --- Gradient'ler (lacivert-cyan ailesi) ------------------------------ */
+  --grad-brand: linear-gradient(135deg, var(--brand) 0%, #1B5F9E 100%);
+  --grad-deep:  linear-gradient(150deg, var(--brand-deep) 0%, var(--navy) 100%);
+  --grad-halo:  radial-gradient(60% 60% at 72% 28%,
+                  rgba(42, 212, 255, 0.24) 0%,
+                  rgba(16, 54, 125, 0.18) 40%,
+                  rgba(247, 249, 252, 0) 72%);
+  --grad-soft:  linear-gradient(160deg, #FFFFFF 0%, var(--brand-soft) 100%);
+  /* Hero video okunurluk overlay'i (WCAG kontrastı garanti — sol taraf koyu) */
+  --grad-hero-overlay: linear-gradient(100deg,
+                  rgba(10, 36, 80, 0.94) 0%,
+                  rgba(13, 44, 105, 0.82) 42%,
+                  rgba(16, 54, 125, 0.55) 100%);
+
+  /* --- Tipografi ---------------------------------------------------------
+     Display: Plus Jakarta Sans · Body: Inter (tam Türkçe glif desteği). */
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Akışkan tip ölçeği (mobil → 1440px) */
+  --fs-display: clamp(2.5rem, 1.6rem + 3.9vw, 4rem);      /* H1 (tek)          */
+  --fs-h2:      clamp(1.75rem, 1.3rem + 1.9vw, 2.5rem);
+  --fs-h3:      clamp(1.2rem, 1.08rem + 0.5vw, 1.375rem);
+  --fs-h4:      1.0625rem;
+  --fs-lead:    clamp(1.05rem, 0.98rem + 0.35vw, 1.25rem);
+  --fs-body:    1rem;
+  --fs-sm:      0.9375rem;
+  --fs-eyebrow: 0.78rem;
+  --fs-label:   0.8125rem;
+
+  --lh-tight:   1.08;
+  --lh-snug:    1.2;
+  --lh-body:    1.65;
+  --measure:    72ch;         /* satır genişliği hedefi 68–76ch */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  --tracking-eyebrow: 0.14em;
+  --tracking-label:   0.02em;
+  --tracking-tight:  -0.02em;   /* büyük başlıklarda sıkı */
+
+  /* --- Spacing ölçeği (4 / 8px tabanlı) ---------------------------------- */
+  --space-0:  0;
+  --space-1:  0.25rem;   /*  4 */
+  --space-2:  0.5rem;    /*  8 */
+  --space-3:  0.75rem;   /* 12 */
+  --space-4:  1rem;      /* 16 */
+  --space-5:  1.5rem;    /* 24 */
+  --space-6:  2rem;      /* 32 */
+  --space-7:  3rem;      /* 48 */
+  --space-8:  4rem;      /* 64 */
+  --space-9:  5rem;      /* 80 */
+  --space-10: 6rem;      /* 96 */
+  --space-11: 8rem;      /* 128 */
+
+  /* Bölümler arası dikey ritim (sabit) */
+  --section-y: clamp(4rem, 2.5rem + 6.5vw, 8rem);
+  --container:  1200px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+
+  /* --- Köşe yarıçapları --------------------------------------------------- */
+  /* Köşe dili (CLAUDE.md direktifi): pill YOK. 50% yalnız gerçek daire (dot/ikon dairesi). */
+  --radius-xs: 4px;    /* chip · tag · badge · sosyal ikon kutusu */
+  --radius-sm: 6px;    /* buton · input · ikon kutusu */
+  --radius-md: 10px;   /* kart */
+  --radius-lg: 12px;   /* medya konteyner · büyük blok */
+  --radius-xl: 12px;   /* alias — büyük blok (pill/aşırı yuvarlak yok) */
+
+  /* --- Gölgeler (düşük opaklık, lacivert tonlu) -------------------------- */
+  --shadow-xs: 0 1px 2px rgba(16, 35, 63, 0.06);
+  --shadow-sm: 0 2px 8px rgba(16, 35, 63, 0.07),
+               0 1px 2px rgba(16, 35, 63, 0.05);
+  --shadow-md: 0 10px 24px -12px rgba(16, 54, 125, 0.22),
+               0 2px 6px rgba(16, 35, 63, 0.06);
+  --shadow-lg: 0 24px 48px -20px rgba(16, 54, 125, 0.32),
+               0 6px 14px -8px rgba(16, 35, 63, 0.12);
+  --shadow-cta: 0 10px 24px -8px rgba(16, 54, 125, 0.48);
+
+  /* --- Hareket ------------------------------------------------------------ */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  180ms;         /* 150–200ms yumuşak geçiş bandı */
+  --dur-slow: 320ms;
+
+  /* --- Katmanlar ---------------------------------------------------------- */
+  --z-header: 100;
+  --z-overlay: 200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur: 0ms; --dur-slow: 0ms; }
+}

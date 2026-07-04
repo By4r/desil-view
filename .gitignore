@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# QA screenshots (self-review only, never committed)
+docs/screenshots/
+
+# Local coordination notes (never committed)
+tasks/
+
+# Scratch / temp
+scratch/
+scratchpad/
+*.tmp
