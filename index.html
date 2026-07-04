@@ -94,7 +94,11 @@
   <main id="main">
 
     <!-- ===================== 1 · HERO ===================== -->
-    <section class="hero">
+    <!-- Perde (curtain): hero-zone akışta 100vh yer tutar; hero viewport'a
+         çakılı sabit kalır, sonraki bölümler üstüne biner (yalnız ≥1024px +
+         motion açık; JS is-hidden ile motor durur). Mobil/reduced: normal akış. -->
+    <div class="hero-zone">
+    <section class="hero hero-sticky">
       <div class="hero-bg" aria-hidden="true">
         <video class="hero-video" data-bg autoplay muted loop playsinline preload="metadata"
                poster="assets/video/hero-veri-akisi-poster.jpg">
@@ -115,6 +119,7 @@
         </div>
       </div>
     </section>
+    </div><!-- /.hero-zone -->
 
     <!-- ===================== 2 · MARKA TANITIMI ===================== -->
     <section class="section section--white" aria-labelledby="intro-title">

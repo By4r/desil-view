@@ -15,6 +15,13 @@
      tutulur (mobilde satır yüksekliği değişebilir). */
   var header = document.querySelector(".site-header");
   var topbar = document.querySelector(".topbar");
+  /* Hero perde (curtain) referansları — ayrıntı: header-scroll-kesif.md §5 */
+  var heroZone = document.querySelector(".hero-zone");
+  var heroSticky = document.querySelector(".hero.hero-sticky");
+  var heroVideo = document.querySelector(".hero-video");
+  var curtainMQ = window.matchMedia("(min-width: 1024px)");
+  var heroCovered = false;                        // perde hero'yu tam örttü mü
+  var canvasStart = null, canvasStop = null;      // canvas rAF kontrolü (canvas bloğu doldurur)
   function topbarH() { return topbar ? topbar.offsetHeight : 0; }
   function syncTopbar() {
     document.documentElement.style.setProperty("--topbar-h", topbarH() + "px");
@@ -22,11 +29,35 @@
   syncTopbar();
   window.addEventListener("resize", syncTopbar);
   function onScroll() {
-    if (!header) return;
-    header.classList.toggle("is-stuck", window.scrollY >= topbarH());
+    if (header) header.classList.toggle("is-stuck", window.scrollY >= topbarH());
+    syncHeroCurtain();
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  /* --- Hero perde (curtain) senkron -------------------------------------
+     Perde ≥1024px + motion açıkken hero viewport'a çakılı sabit kalır; scrollY
+     spacer yüksekliğini (100vh) geçince perde hero'yu tamamen örter. Fixed hero
+     IntersectionObserver'a HEP "görünür" der; bu yüzden örtüldüğünde video +
+     canvas motoru burada ELLE durdurulur (sürdürülebilirlik — §5.4-d).
+     Mobil/reduced-motion'da active=false → hiç müdahale yok, normal akış. */
+  function syncHeroCurtain() {
+    if (!heroZone || !heroSticky) return;
+    var active = curtainMQ.matches && !prefersReduced;
+    var covered = active && window.scrollY > heroZone.offsetHeight;
+    if (covered === heroCovered) return;          // durum değişmediyse çık (play() spam'i yok)
+    heroCovered = covered;
+    heroSticky.classList.toggle("is-hidden", covered);
+    if (covered) {
+      if (canvasStop) canvasStop();
+      if (heroVideo) heroVideo.pause();
+    } else {
+      if (canvasStart) canvasStart();
+      if (heroVideo && !prefersReduced) { var p = heroVideo.play(); if (p && p.catch) p.catch(function () {}); }
+    }
+  }
+  window.addEventListener("resize", syncHeroCurtain);
+  if (curtainMQ.addEventListener) curtainMQ.addEventListener("change", syncHeroCurtain);
 
   /* --- Mobil menü -------------------------------------------------------- */
   var toggle = document.querySelector(".nav-toggle");
@@ -175,8 +206,10 @@
     if (!prefersReduced) {
       // Görünürken çalış, sekme/dışarı çıkınca dur (sürdürülebilir)
       var running = false;
-      function start() { if (!running) { running = true; raf = requestAnimationFrame(tick); } }
+      // heroCovered: perde altındayken (fixed hero) rAF başlatma — IO hep "görünür" der
+      function start() { if (!running && !heroCovered) { running = true; raf = requestAnimationFrame(tick); } }
       function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
+      canvasStart = start; canvasStop = stop;   // curtain senkronunun erişebilmesi için dışa aç
       document.addEventListener("visibilitychange", function () {
         if (document.hidden) stop(); else start();
       });
@@ -205,8 +238,10 @@
       bgVideos.forEach(function (v) { vio.observe(v); });
       document.addEventListener("visibilitychange", function () {
         bgVideos.forEach(function (v) {
-          if (document.hidden) v.pause();
-          else if (v.getBoundingClientRect().top < window.innerHeight && v.getBoundingClientRect().bottom > 0) playVid(v);
+          if (document.hidden) { v.pause(); return; }
+          if (heroCovered && v === heroVideo) return;   // perde altında hero video'yu replay etme
+          var r = v.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) playVid(v);
         });
       });
     }

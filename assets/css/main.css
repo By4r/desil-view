@@ -206,6 +206,9 @@ button { font-family: inherit; cursor: pointer; }
    Normal akışta durur, scroll'la yukarı gider; header onu izleyip sabitlenir.
    ========================================================================== */
 .topbar {
+  /* Akışta sayfa tepesinde durur; perde (curtain) halinde .hero-sticky fixed
+     z:0 viewport üstünü de kapladığından topbar onun üstünde kalmalı (z:3). */
+  position: relative; z-index: 3;
   background: var(--brand-deep);
   color: rgba(255, 255, 255, 0.78);
   font-size: var(--fs-label);
@@ -413,6 +416,27 @@ body.nav-open .nav-toggle span::after  { transform: translate(-50%, -50%) rotate
 /* Reduced-motion: video duraklatılır, poster kalır */
 @media (prefers-reduced-motion: reduce) {
   .hero-canvas { opacity: 0.4; }
+}
+
+/* --------------------------------------------------------------------------
+   HERO PERDE (curtain) — yalnız ≥1024px + motion açık (footer-reveal'in tepe-
+   aynası, aynı fixed + z-index + spacer ailesi). hero-zone akışta 100vh şeffaf
+   spacer yer tutar; hero viewport'a çakılı sabit kalır; sonraki opak bölümler
+   scroll'da hero'nun üstüne perde gibi biner. Katman (page-main stacking
+   context'i içinde): hero-sticky z:0 < hero-zone z:1 < sonraki section z:2 <
+   header z:100. Mobil/kısa/reduced-motion: hiçbiri uygulanmaz → hero normal
+   akışta kalır (page-main'de transform yok, fixed viewport'a göre çözülür). */
+.hero-zone { position: relative; }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .hero-zone { z-index: 1; height: 100vh; min-height: 640px; overflow-x: clip; }
+  .hero.hero-sticky {
+    position: fixed; inset: 0 0 auto 0;
+    height: 100vh; min-height: 640px; z-index: 0; overflow-x: clip;
+  }
+  .hero.hero-sticky .hero-inner { min-height: 100vh; }
+  .hero-zone ~ section { position: relative; z-index: 2; }
+  /* Perde tam örttüğünde (JS) sabit hero'yu görselden düşür — boşuna paint yok */
+  .hero-sticky.is-hidden { visibility: hidden; }
 }
 
 /* ==========================================================================
