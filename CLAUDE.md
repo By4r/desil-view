@@ -13,9 +13,25 @@
 
 Pill/aşırı yuvarlak YASAK. Tüm köşeler şu skaladan: chip/tag/badge/sosyal ikon kutusu **4px** · buton/input **6px** · kart **10px** · medya konteyneri/büyük blok **12px**. `border-radius: 50%` yalnızca gerçekten daire olan dekoratif öğede (dot, ikon dairesi). Sayfadaki HER öğe (footer sosyal ikonları dahil) aynı köşe dilinde olmalı.
 
+## Kanonik Shell — index.html R2 (commit `3ac122c`) — Beyar + Yasin Bey onaylı, KİLİTLİ
+
+Pilot onaylandı (2026-07-04). index.html'in R2 sonrası hali **kanonik referanstır**; tüm iç sayfalar bu shell'i birebir KLONLAR (topbar/header/footer hardcoded — her sayfaya kopyalanır, sapma yok). index.html'e dokunmak YASAK (nav href düzeltmesi gerekiyorsa yalnız Lead, tek hedefli edit).
+
+Kanonik öğeler:
+1. **Topbar:** `--brand-deep` bilgi barı — tel + e-posta + 4 sosyal + TR|EN (EN pasif `aria-disabled` span). Mobilde sosyal gizli.
+2. **Header (absolute→stuck):** `.site-header` — sayfa üstünde `top: var(--topbar-h)`, scrollY ≥ topbar yüksekliğinde JS `is-stuck` sınıfıyla `fixed top:0`. Sayfa üstünde AÇIK tema (beyaz logo/nav), `is-stuck`'ta açık zemin + lacivert logo (`logo-white`/`logo-dark` swap). **Sonuç: her sayfanın İLK bölümü KOYU olmalı** (iç sayfalarda `.page-hero`) — yoksa beyaz nav okunmaz.
+3. **Footer:** ortalanmış kompozisyon (logo → slogan → yatay link satırı → yatay iletişim → alt bar) + `--grad-footer` gradient + cyan hale/hairline + **footer-reveal perdesi** (≥641px fixed bottom + `.page-main` z2 opak + JS margin-bottom senkronu; ≤640 statik). `.page-main` sarmalayıcısı ve `main.js` her sayfada zorunlu.
+4. **Keskin bölüm geçişleri:** beyaz/mavi alternans (`.section--white` ↔ `.section--tint` `--surface-blue`), fade/gradient geçiş şeridi YOK; koyu bantlar `.section--dark`.
+5. **Radius skalası:** 4/6/10/12px (yukarıdaki bölüm) — pill yok.
+6. **Sağ-üst "Tümünü Gör" deseni:** `.section-head-row` — solda eyebrow+H2, sağda başlıkla hizalı `btn--ghost/--light btn--sm` CTA; lead satırı altta tam genişlik.
+7. **Carousel:** `data-carousel` section + `.carousel-track` (scroll-snap, kütüphanesiz) + `.carousel-nav` okları `section-head-tools` içinde. Controller `main.js`'te, jenerik.
+
+**Component rejimi (Wave 2+):** `tasks/components.md` = component sözlüğü, TEK kaynak. Aynı ihtiyaç = aynı component; sayfadan sayfaya varyasyon YASAK. Yeni component ihtiyacı → teammate KENDİSİ TASARLAMAZ, Lead'e bildirir; Lead components.md'ye tanım ekler, sonra üretilir. İç sayfa ortak component CSS'i `assets/css/components.css`'te (ilk sayfayla üretilir, sonrası hedefli edit rejimi); sayfa-özel CSS `assets/css/pages/<sayfa>.css`. tokens.css'e yeni token eklemek YASAK (ihtiyaç Lead üzerinden Beyar'a). Ortak dosyalara (tokens.css, main.css, main.js, components.css) full-file overwrite YASAK.
+
 ## Anahtar Dosyalar
 
 - `tasks/research.md` — keşif raporu: görsel kimlik, desil.org içerik envanteri, gaviaworks rubriği, skill araştırması
+- `tasks/components.md` — component sözlüğü (Wave 2+): iç sayfa component'lerinin TEK desen tanımı
 - `tasks/plan.md` — sayfa bazlı üretim planı (wave yapısı)
 - `tasks/handoff.md` — teammate'ler arası devir notları (kim neyi bitirdi, ne bekliyor)
 - `tasks/lessons.md` — öğrenilen dersler; her teammate revize turunda buraya yazar, üretimden önce okur
