@@ -27,7 +27,8 @@ sorulmaz. (CLAUDE.md'deki "commit/push sadece açık izinle" kuralının açık 
    - Bunlar gitignore'da; yine de stage sonrası listede görünürlerse stage'den çıkar ve nedenini
      raporla (gitignore bozulmuş demektir).
 4. Oturumda DOKUNULMAYAN local değişiklikler unstaged bırakılır — başkasının/başka oturumun işi
-   karışmaz.
+   karışmaz. **İstisna:** önceki oturumdan stage'de bırakılmış ama commit'lenmemiş değişiklik
+   (yarım kalmış handoff) bulursan bunu raporla ve bu akışta commit'leyerek kapat.
 5. Farklı concern'lere ait değişiklikler AYRI commit'lere bölünür (gerekirse `git add -p` ile
    hunk ayır). Örnek: içerik düzeltmesi ile token/CSS değişikliği aynı commit'e girmez.
 
@@ -40,6 +41,15 @@ sorulmaz. (CLAUDE.md'deki "commit/push sadece açık izinle" kuralının açık 
 4. Push SONRASI doğrula: `git status --short --branch`. Çıktıda `[ahead N]` görünüyorsa push
    tamamlanmamıştır — tekrar dene. **"origin ile senkron" ifadesi ancak bu doğrulama temiz
    çıkınca yazılır.**
+5. **BLOKE FALLBACK:** `git commit` veya `git push` izin sınıflandırıcısı tarafından bloke edilirse:
+   - Stage'i BOZMADAN bırak (staged liste hazır kalsın — sonraki oturum ADIM 1.4 istisnasıyla kapatır)
+   - Kapanış raporunda **"Commit: BLOKE"** başlığı altında Beyar'ın kendisinin çalıştıracağı
+     komutları TAM ve kopyalanabilir halde ver (`git commit -m '...'` ve `git push origin main`)
+   - Push doğrulama adımını "Beyar push sonrası `git status --short --branch` ile senkron kontrol
+     etmeli" notuyla Beyar'a devret
+   - `tasks/handoff.md`'ye bloke durumunu ve bekleyen komutları işle
+   - Bloke, skill'in geri kalan adımlarını (ADIM 3 handoff güncelleme, ADIM 4 rapor) İPTAL ETMEZ —
+     onlar normal devam eder
 
 ## ADIM 3 — HANDOFF GÜNCELLE
 
