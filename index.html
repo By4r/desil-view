@@ -22,6 +22,46 @@
 <body>
   <a class="skip-link" href="#main">İçeriğe geç</a>
 
+  <!-- Footer perdesi: footer hariç tüm içerik opak sarmalayıcıda (reveal) -->
+  <div class="page-main">
+
+  <!-- ===================== TOPBAR (bilgi barı) ===================== -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-contact">
+        <a href="tel:+902166066895">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l2 5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 1-2Z"/></svg>
+          0216 606 68 95
+        </a>
+        <a href="mailto:bilgi@desil.org">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          bilgi@desil.org
+        </a>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-social">
+          <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1.3-3 3.2V11H8v3h3v6h3v-6h3l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg>
+          </a>
+          <a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l7-9L3 3h6l4 5 5-5Zm-2 16h1.5L8 5H6.5L16 19Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5A1.75 1.75 0 1 0 6.5 5a1.75 1.75 0 0 0 0 3.5ZM5 10h3v9H5Zm5 0h2.8v1.3c.4-.7 1.4-1.5 3-1.5 3 0 3.5 1.9 3.5 4.4V19h-3v-4.2c0-1-.2-2.1-1.6-2.1s-1.7 1-1.7 2v4.3h-3Z"/></svg>
+          </a>
+        </div>
+        <div class="topbar-lang" aria-label="Dil seçimi">
+          <span class="lang-active" aria-current="true">TR</span>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <span class="lang-passive" aria-disabled="true">EN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -72,16 +112,12 @@
             <a class="btn btn--light" href="dijital-etki-lab.html">Dijital Etki Lab'i Keşfet</a>
             <a class="btn btn--light" href="destek-ol.html">Bağış Yap</a>
           </div>
-          <div class="hero-chips">
-            <span class="hero-chip"><span class="dot"></span>Veriyle Etki</span>
-            <span class="hero-chip"><span class="dot"></span>Sürdürülebilir Dijital</span>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- ===================== 2 · MARKA TANITIMI ===================== -->
-    <section class="section" aria-labelledby="intro-title">
+    <section class="section section--white" aria-labelledby="intro-title">
       <div class="container intro-grid">
         <div class="intro-copy reveal">
           <span class="eyebrow">DESİL Nedir</span>
@@ -171,7 +207,7 @@
           <p class="section-lead">Yapay zekâ çağında sürdürülebilirlik, etik teknoloji ve toplumsal fayda için fikirler, notlar ve etki göstergeleri.</p>
         </div>
 
-        <div class="grid grid-4">
+        <div class="lab-rows">
           <article class="lab-card reveal">
             <div class="lab-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
@@ -204,8 +240,8 @@
       </div>
     </section>
 
-    <!-- ===================== 5 · PROJELER ===================== -->
-    <section class="section section--soft" aria-labelledby="projects-title">
+    <!-- ===================== 5 · PROJELER (3'lü carousel) ===================== -->
+    <section class="section section--white" aria-labelledby="projects-title" data-carousel>
       <div class="container">
         <div class="section-head reveal">
           <div class="section-head-row">
@@ -213,14 +249,24 @@
               <span class="eyebrow">Projeler</span>
               <h2 class="section-title" id="projects-title">Sahada süren dijital etki projeleri</h2>
             </div>
-            <a class="btn btn--ghost btn--sm section-cta" href="projeler.html">Tümünü Gör
-              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-            </a>
+            <div class="section-head-tools">
+              <a class="btn btn--ghost btn--sm section-cta" href="projeler.html">Tümünü Gör
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+              <div class="carousel-nav">
+                <button class="carousel-btn carousel-prev" type="button" aria-label="Önceki projeler">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+                </button>
+                <button class="carousel-btn carousel-next" type="button" aria-label="Sonraki projeler">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
           <p class="section-lead">Farkındalıktan kültürel mirasa; toplumsal faydayı dijital ve sürdürülebilir çözümlerle büyüten çalışmalar.</p>
         </div>
 
-        <div class="grid grid-4">
+        <div class="carousel-track" tabindex="0" aria-label="Proje kartları — yatay kaydırılabilir liste">
           <article class="project-card reveal">
             <div class="project-media" role="img" aria-label="Çaykara farkındalık programı"
                  style="background-image: url('assets/img/proje-caykara.webp');"></div>
@@ -278,7 +324,7 @@
     </section>
 
     <!-- ===================== 7 · SON İÇERİKLER ===================== -->
-    <section class="section" aria-labelledby="news-title">
+    <section class="section section--tint" aria-labelledby="news-title">
       <div class="container">
         <div class="section-head reveal">
           <div class="section-head-row">
@@ -350,25 +396,57 @@
       </div>
     </section>
 
-    <!-- ===================== 9 · PAYDAŞLAR ===================== -->
-    <section class="section" aria-labelledby="partners-title">
+    <!-- ===================== 9 · PAYDAŞLAR (logo carousel'i) ===================== -->
+    <section class="section section--white" aria-labelledby="partners-title" data-carousel>
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">İş Birlikleri</span>
-          <h2 class="section-title" id="partners-title">Birlikte üretilen paydaşlıklar</h2>
+          <div class="section-head-row">
+            <div class="section-head-titles">
+              <span class="eyebrow">İş Birlikleri</span>
+              <h2 class="section-title" id="partners-title">Birlikte üretilen paydaşlıklar</h2>
+            </div>
+            <div class="section-head-tools">
+              <a class="btn btn--ghost btn--sm section-cta" href="is-birlikleri.html">İş birliklerini gör
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+              <div class="carousel-nav">
+                <button class="carousel-btn carousel-prev" type="button" aria-label="Önceki logolar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+                </button>
+                <button class="carousel-btn carousel-next" type="button" aria-label="Sonraki logolar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="partners-row reveal">
+        <!-- Demo logolar yer tutucudur; yayın öncesi gerçek paydaş logolarıyla değişir -->
+        <div class="carousel-track partners-track reveal" tabindex="0" aria-label="Paydaş logoları — yatay kaydırılabilir liste">
           <div class="partner-card">
             <img src="assets/img/paydas-balkan-calismalari.png" alt="Balkan Çalışmaları Derneği">
           </div>
-          <a class="link-more" href="is-birlikleri.html">İş birliklerini gör
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-          </a>
+          <div class="partner-card">
+            <img src="assets/img/partner-demo-1.svg" alt="Örnek paydaş logosu (yer tutucu)">
+          </div>
+          <div class="partner-card">
+            <img src="assets/img/partner-demo-2.svg" alt="Örnek paydaş logosu (yer tutucu)">
+          </div>
+          <div class="partner-card">
+            <img src="assets/img/partner-demo-3.svg" alt="Örnek paydaş logosu (yer tutucu)">
+          </div>
+          <div class="partner-card">
+            <img src="assets/img/partner-demo-4.svg" alt="Örnek paydaş logosu (yer tutucu)">
+          </div>
+          <div class="partner-card">
+            <img src="assets/img/partner-demo-5.svg" alt="Örnek paydaş logosu (yer tutucu)">
+          </div>
         </div>
       </div>
     </section>
 
   </main>
+
+  </div><!-- /.page-main -->
 
   <!-- ===================== 10 · FOOTER ===================== -->
   <footer class="site-footer">

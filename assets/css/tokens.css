@@ -23,6 +23,7 @@
   --ground:      #F7F9FC;  /* Sayfa arka planı (beyazdan yumuşak, mavi tın)   */
   --surface:     #FFFFFF;  /* kart yüzeyi                                     */
   --surface-alt: #EEF3FB;  /* bir tık koyu bölüm zemini                       */
+  --surface-blue:#E4EDF9;  /* R1 revize: belirgin "mavi" bölüm zemini (beyaz-mavi alternans) */
   --brand-soft:  #EAF1FB;  /* kart/Lab zeminleri (eski "mint" rolü)           */
   --brand-tint:  #DEE9FA;  /* ince tint · ikon kutusu kenarı                  */
   --brand-wash:  #F0F5FC;  /* nav/buton hover · açık bölüm zemini             */
@@ -43,11 +44,18 @@
                   rgba(16, 54, 125, 0.18) 40%,
                   rgba(247, 249, 252, 0) 72%);
   --grad-soft:  linear-gradient(160deg, #FFFFFF 0%, var(--brand-soft) 100%);
-  /* Hero video okunurluk overlay'i (WCAG kontrastı garanti — sol taraf koyu) */
-  --grad-hero-overlay: linear-gradient(100deg,
-                  rgba(10, 36, 80, 0.94) 0%,
-                  rgba(13, 44, 105, 0.82) 42%,
-                  rgba(16, 54, 125, 0.55) 100%);
+  /* Hero video okunurluk overlay'i (WCAG kontrastı garanti — R1: metin
+     ortalandığı için simetrik dikey gradient, orta bant yeterince koyu) */
+  --grad-hero-overlay: linear-gradient(180deg,
+                  rgba(10, 36, 80, 0.88) 0%,
+                  rgba(13, 44, 105, 0.72) 52%,
+                  rgba(9, 30, 66, 0.90) 100%);
+  /* Footer gradient dili (R1, madde 7 — kompozisyon gaviaworks, renkler DESİL):
+     koyu lacivert diagonal taban; cyan hale ::before ile main.css'te eklenir */
+  --grad-footer: linear-gradient(160deg,
+                  var(--navy) 0%,
+                  var(--brand-deep) 48%,
+                  var(--brand-700) 100%);
 
   /* --- Tipografi ---------------------------------------------------------
      Display: Plus Jakarta Sans · Body: Inter (tam Türkçe glif desteği). */
@@ -96,6 +104,8 @@
 
   /* Bölümler arası dikey ritim (sabit) */
   --section-y: clamp(4rem, 2.5rem + 6.5vw, 8rem);
+  /* Üst bilgi barı yüksekliği (R1, madde 1) — JS ölçümle senkronlar */
+  --topbar-h: 38px;
   --container:  1200px;
   --container-narrow: 760px;
   --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);

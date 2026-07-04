@@ -8,11 +8,22 @@
 
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* --- Sticky header: kaydırınca sade zemin ----------------------------- */
+  /* --- Topbar + sticky header --------------------------------------------
+     Topbar akışta durur; header absolute top:var(--topbar-h) başlar. Scroll
+     topbar yüksekliğine ulaştığı anda is-stuck header'ı fixed top:0'a alır —
+     geçiş pikselde dikişsizdir. --topbar-h JS ölçümüyle gerçek yükseklikte
+     tutulur (mobilde satır yüksekliği değişebilir). */
   var header = document.querySelector(".site-header");
+  var topbar = document.querySelector(".topbar");
+  function topbarH() { return topbar ? topbar.offsetHeight : 0; }
+  function syncTopbar() {
+    document.documentElement.style.setProperty("--topbar-h", topbarH() + "px");
+  }
+  syncTopbar();
+  window.addEventListener("resize", syncTopbar);
   function onScroll() {
     if (!header) return;
-    header.classList.toggle("is-stuck", window.scrollY > 12);
+    header.classList.toggle("is-stuck", window.scrollY >= topbarH());
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -200,6 +211,58 @@
       });
     }
   }
+
+  /* --- Carousel (scroll-snap tabanlı, kütüphanesiz) ----------------------
+     [data-carousel] kökü: .carousel-track + .carousel-prev/next. Dokunmatik
+     kaydırma native scroll; oklar kart genişliği kadar kaydırır. */
+  document.querySelectorAll("[data-carousel]").forEach(function (root) {
+    var track = root.querySelector(".carousel-track");
+    var prev = root.querySelector(".carousel-prev");
+    var next = root.querySelector(".carousel-next");
+    if (!track) return;
+    function step() {
+      var item = track.firstElementChild;
+      if (!item) return track.clientWidth;
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return item.getBoundingClientRect().width + gap;
+    }
+    function update() {
+      var max = track.scrollWidth - track.clientWidth - 1;
+      if (prev) prev.disabled = track.scrollLeft <= 0;
+      if (next) next.disabled = track.scrollLeft >= max;
+    }
+    function go(dir) {
+      track.scrollBy({ left: dir * step(), behavior: prefersReduced ? "auto" : "smooth" });
+    }
+    if (prev) prev.addEventListener("click", function () { go(-1); });
+    if (next) next.addEventListener("click", function () { go(1); });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+
+  /* --- Footer perdesi (reveal) -------------------------------------------
+     DadaMutfak'ta kanıtlı teknik: desktop'ta footer fixed bottom'da bekler,
+     içerik sonuna footer yüksekliği kadar boşluk açılır — scroll sonunda
+     içerik kalkar, footer açığa çıkar. Mobil (≤640) statik. Emniyet: footer
+     viewport'a sığmıyorsa reveal devre dışı (statik akışa döner). */
+  var pageMain = document.querySelector(".page-main");
+  var siteFooter = document.querySelector(".site-footer");
+  function fitFooter() {
+    if (!pageMain || !siteFooter) return;
+    document.body.classList.remove("has-reveal");
+    pageMain.style.marginBottom = "";
+    if (!window.matchMedia("(min-width: 641px)").matches) return;
+    var h = siteFooter.offsetHeight; // statik durumda ölçülür
+    if (h > 0 && h <= window.innerHeight * 0.92) {
+      document.body.classList.add("has-reveal");
+      pageMain.style.marginBottom = h + "px";
+    }
+  }
+  fitFooter();
+  window.addEventListener("resize", fitFooter);
+  window.addEventListener("load", fitFooter);           // font/logo yüklenince yükseklik oturur
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFooter);
 
   /* --- Footer yılı ------------------------------------------------------ */
   var yearEl = document.querySelector("[data-year]");

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="Örnek paydaş logosu">
+  <g fill="none" stroke="#6C7B90" stroke-width="2.5" stroke-linecap="round">
+    <path d="M16 44 30 24l10 12 12-18"/>
+    <circle cx="52" cy="18" r="4" fill="#6C7B90" stroke="none"/>
+  </g>
+  <text x="66" y="30" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1" fill="#6C7B90">ÖRNEK</text>
+  <text x="66" y="48" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="3" fill="#6C7B90">PAYDAŞ</text>
+</svg>
