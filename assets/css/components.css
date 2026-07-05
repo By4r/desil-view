@@ -533,20 +533,3 @@ textarea.input { resize: vertical; min-height: 120px; }
 }
 .support-cta-light p { color: var(--ink-soft); line-height: var(--lh-body); max-width: 56ch; }
 .support-cta-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-top: var(--space-3); }
-
-/* === CONSENT BANNER — KVKK bilgilendirme bandı (R4 m.14) ================ */
-.consent-banner {
-  position: fixed; inset-inline: 0; bottom: 0; z-index: 200;
-  background: var(--surface);
-  border-top: 1px solid var(--line-strong);
-  box-shadow: 0 -10px 30px rgba(10, 36, 80, 0.12);
-  padding: var(--space-4) 0;
-}
-.consent-inner { display: flex; align-items: center; gap: var(--space-5); }
-.consent-text { font-size: var(--fs-sm); color: var(--ink-soft); line-height: var(--lh-body); }
-.consent-text a { color: var(--brand); font-weight: var(--fw-semi); text-decoration: underline; text-underline-offset: 2px; }
-.consent-actions { display: flex; gap: var(--space-2); flex: none; }
-@media (max-width: 720px) {
-  .consent-banner { padding: var(--space-3) 0; }
-  .consent-inner { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
-}

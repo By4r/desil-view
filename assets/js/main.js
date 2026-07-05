@@ -327,6 +327,37 @@
     select(initial || tabs[0]);
   });
 
+  /* --- KVKK bilgilendirme ve onay bandı (R4 m.14) ------------------------ */
+  (function () {
+    var KEY = "desil-consent";
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) { return; } /* private mode: her sayfada tekrar belirmesin */
+    if (stored) return;
+    var ayd = document.querySelector('.site-footer a[href$="aydinlatma-metni.html"]');
+    var cer = document.querySelector('.site-footer a[href$="cerezler.html"]');
+    var aydHref = ayd ? ayd.getAttribute("href") : "aydinlatma-metni.html";
+    var cerHref = cer ? cer.getAttribute("href") : "cerezler.html";
+    var banner = document.createElement("div");
+    banner.className = "consent-banner";
+    banner.setAttribute("role", "region");
+    banner.setAttribute("aria-label", "Kişisel veri bilgilendirmesi");
+    banner.innerHTML =
+      '<div class="container consent-inner">' +
+        '<p class="consent-text">Kişisel verileriniz, deneyiminizi iyileştirmek ve hizmetlerimizi geliştirmek amacıyla KVKK’ya uygun şekilde işlenmektedir. Detaylı bilgi için <a href="' + aydHref + '">Aydınlatma Metni</a> ve <a href="' + cerHref + '">Çerez Politikası</a> sayfalarını inceleyebilirsiniz.</p>' +
+        '<div class="consent-actions">' +
+          '<button type="button" class="btn btn--primary btn--sm" data-consent="accepted">Kabul Et</button>' +
+          '<button type="button" class="btn btn--ghost btn--sm" data-consent="essential">Yalnızca Zorunlu</button>' +
+        '</div>' +
+      '</div>';
+    banner.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest("[data-consent]") : null;
+      if (!btn) return;
+      try { localStorage.setItem(KEY, btn.getAttribute("data-consent")); } catch (e2) {}
+      if (banner.parentNode) banner.parentNode.removeChild(banner);
+    });
+    document.body.appendChild(banner);
+  })();
+
   /* --- Footer yılı ------------------------------------------------------ */
   var yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
