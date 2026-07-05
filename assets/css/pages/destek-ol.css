@@ -1,0 +1,10 @@
+/* === DESTEK OL — "Biz Sizi Arayalım" formu ortalanır (R4 m.13) =========
+   Form component'ine (assets/css/components.css) dokunulmadı; yalnız bu
+   sayfada #form içindeki mevcut .form bloğu daraltılıp ortalanıyor. ===== */
+#form .form--centered {
+  max-width: 720px;
+  margin-inline: auto;
+}
+#form .form--centered > button[type="submit"] {
+  justify-self: center;
+}
