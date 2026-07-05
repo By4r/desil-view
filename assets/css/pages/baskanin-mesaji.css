@@ -1,6 +1,81 @@
-/* === BAŞKANIN MESAJI — sayfaya özgü düzen (R3 Faz 2) =====================
+/* === BAŞKANIN MESAJI — sayfaya özgü düzen (R4 Faz 1 pilot, m.1) ===========
    Başkan fotoğrafı eldeki tek varlık (yk-yasin-yavuz.webp, 300×300 kare) —
-   upscale/büyütme yasağı gereği kart genişliği kaynağın piksel genişliğini
-   aşmayacak şekilde sabitlenir (bkz. tasks/handoff.md FE-A notu). */
-.baskan-split { align-items: start; }
-.baskan-photo { max-width: 280px; justify-self: center; }
+   upscale/büyütme yasağı gereği fotoğrafın net alanı 300px'te sabit kalır;
+   büyük ve prestijli his dekoratif çift-çerçeve kompozisyonuyla sağlanır
+   (S-R4-2). Yüksek çözünürlüklü foto gelince yalnız .baskan-portrait-photo
+   satırındaki background-image tek noktadan değişir. */
+
+/* --- (a) açılış kompozisyonu: portre + mesajın ilk yarısı ---
+   Foto SAĞDA, metin SOLDA (S-R4-2 karar notu, FE-A screenshot karşılaştırması):
+   H2 hemen sayfa akışına devam eder (page-hero'dan sonra ikinci büyük görselle
+   karşılaşmadan), portre sağda "imza" gibi duruyor; dekoratif çerçevenin
+   sağ-alt taşması sayfa kenar boşluğuna doğru rahat nefes alıyor. */
+.baskan-intro { align-items: center; }
+.baskan-intro .baskan-portrait { order: 1; }
+.baskan-intro .media-split-body { order: 0; }
+.baskan-portrait {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 340px;
+  padding: 28px 0 28px 28px;
+}
+.baskan-portrait-frame {
+  position: absolute;
+  inset: 0 0 0 28px;
+  background: var(--grad-soft);
+  border: 1px solid var(--brand-tint);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+.baskan-portrait-photo {
+  position: relative; z-index: 1;
+  width: 300px; height: 300px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  background: var(--brand-soft) center/cover no-repeat;
+  box-shadow: var(--shadow-md);
+  border: 6px solid var(--surface);
+}
+.baskan-portrait-label {
+  position: relative; z-index: 1;
+  margin-top: var(--space-5);
+  text-align: center;
+}
+.baskan-portrait-label strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  color: var(--ink);
+}
+.baskan-portrait-label span {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+@media (max-width: 640px) {
+  .baskan-portrait { max-width: 280px; padding: 20px 0 20px 20px; }
+  .baskan-portrait-photo { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+}
+
+/* --- (b) tam genişlik alıntı bandı --- */
+.baskan-quote-band { max-width: 760px; margin-inline: auto; text-align: center; }
+.baskan-quote-band .intro-quote {
+  margin-top: 0; padding: 0; background: none; border-left: 0; border-radius: 0;
+}
+.baskan-quote-band .intro-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 1.875rem);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--navy);
+}
+.baskan-quote-band .intro-quote .quote-label { margin-top: var(--space-4); }
+
+/* --- (c) mesajın kalan yarısı --- */
+.baskan-remainder .prose:first-child h2:first-child,
+.baskan-remainder .prose:first-child p:first-child { margin-top: 0; }
