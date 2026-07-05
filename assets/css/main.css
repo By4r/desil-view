@@ -279,8 +279,11 @@ button { font-family: inherit; cursor: pointer; }
   gap: var(--space-5);
   min-height: 76px;
 }
-.brand { display: inline-flex; align-items: center; flex: none; }
-.brand img { height: 46px; width: auto; display: block; } /* R1 madde 2: logo belirgin */
+/* Sabit kutu: iki logo varyantı farklı oranda (beyaz 1592×582, lacivert 1610×552);
+   genişlik en geniş varyanta (lacivert, 46px yükseklikte ~134.2px) göre sabitlenir ki
+   is-stuck swap'ında nav elemanları kaymasın. */
+.brand { display: inline-flex; align-items: center; flex: none; width: 135px; height: 46px; }
+.brand img { width: 100%; height: 100%; object-fit: contain; object-position: left center; display: block; } /* R1 madde 2: logo belirgin */
 /* Logo, hero üstünde beyaz; sticky (açık zemin) olunca lacivert */
 .brand .logo-dark { display: none; }
 .site-header.is-stuck .brand .logo-white { display: none; }
@@ -867,7 +870,7 @@ body.nav-open .nav-toggle span::after  { transform: translate(-50%, -50%) rotate
   .hero-actions .btn { flex: 1 1 auto; }
   /* Ortalanmış footer hiyerarşisi mobilde de merkezde kalır */
   .footer-bottom { flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-  .brand img { height: 40px; }
+  .brand { width: 117px; height: 40px; } /* 40px yükseklikte en geniş varyant ~116.7px */
   /* Carousel mobil: 1 kart + sonrakinin kenarı görünür (kaydırma ipucu) */
   .carousel-track { grid-auto-columns: 86%; }
   .partners-track { grid-auto-columns: calc((100% - var(--space-5)) / 2.2); }
