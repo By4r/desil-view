@@ -74,7 +74,17 @@ Kanonik öğeler:
 - Retina 2x çarpma YOK (screenshot ve asset boyutlarında).
 - Kare görseller `<img>` ile DEĞİL — `div` + `background-image: cover; center` ile.
 - gaviaworks.com'dan renk/font almak YASAK.
-- Brief ve desil.org dışında içerik/metin uydurmak YASAK.
+- Brief ve desil.org dışında içerik/metin uydurmak YASAK (tek istisna: aşağıdaki Demo İçerik Rejimi).
 - Kapsam dışı modüller (üyelik, sertifika sorgulama, etkinlik başvurusu, üye paneli) YASAK.
 - Etki sayaçlarında doğrulanmamış veri ("0+", uydurma rakam) YASAK — veri yoksa sayaç gizlenir.
 - Ağır video, büyük arka plan animasyonu, performans düşüren efekt YASAK (sürdürülebilir web ilkesi).
+
+## Demo İçerik Rejimi (R3+, Beyar direktifi 2026-07-05 — içerik uydurma yasağının TEK istisnası)
+
+Eksik gerçek içerik DEMO ile tamamlanır — ileride admin panelden gerçekleriyle değiştirilecek. Kurallar:
+- Demo metin kurumsal DESİL tonunda yazılır; lorem ipsum YASAK.
+- İletişim bilgisi, gerçek kişi profili linki (sahte `linkedin.com/in/...` vb.), gerçek kurum adı/logosu ASLA uydurulmaz.
+- Demo linkler işlevsizdir: `href="#"` + `aria-disabled="true"`; gerçek-görünümlü URL yazılmaz.
+- desil.org'daki şablon placeholder'ları (ör. Danışma Kurulu'ndaki "Richards Mills") gerçek içerik DEĞİLDİR — asla taşınmaz.
+- Kaynak içerik boşsa iki yol var: kurumsal tonlu demo içerik YA DA `empty-state` bloğu (components.md) — hangisinin kullanılacağı sayfa planında yazar (tasks/revize-plan-r3.md), teammate kendisi seçmez.
+- Demo görsel alanları `media-ph` placeholder deseniyle kurulur (components.md) — gerçek görsel tek noktadan takılabilir olmalı.
