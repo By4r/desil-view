@@ -26,6 +26,8 @@ Kanonik öğeler:
 6. **Sağ-üst "Tümünü Gör" deseni:** `.section-head-row` — solda eyebrow+H2, sağda başlıkla hizalı `btn--ghost/--light btn--sm` CTA; lead satırı altta tam genişlik.
 7. **Carousel:** `data-carousel` section + `.carousel-track` (scroll-snap, kütüphanesiz) + `.carousel-nav` okları `section-head-tools` içinde. Controller `main.js`'te, jenerik.
 
+**R4 shell güncellemeleri (Beyar onayı 2026-07-06 — tasks/revize-plan-r4.md):** (1) m.12 — nav listesinde "Destek Ol" öğesi KALDIRILDI (sağdaki header-cta butonu + mobil sticky-donate kalır); index.html'deki tek satırlık nav editi dokunulmazlığın İZİNLİ istisnasıdır, yalnız Lead yapar (S5 emsali). (2) m.14 — KVKK consent banner shell'in parçasıdır: sayfa HTML'ine yazılmaz, `main.js` inject eder (tanım components.md §25); hukuki sayfalar (kvkk/cerezler/aydinlatma-metni.html) desil.org `kurumsal/*` içeriğinden birebir üretilir, footer'daki mevcut linkler bunlara bağlanır.
+
 **Component rejimi (Wave 2+):** `tasks/components.md` = component sözlüğü, TEK kaynak. Aynı ihtiyaç = aynı component; sayfadan sayfaya varyasyon YASAK. Yeni component ihtiyacı → teammate KENDİSİ TASARLAMAZ, Lead'e bildirir; Lead components.md'ye tanım ekler, sonra üretilir. İç sayfa ortak component CSS'i `assets/css/components.css`'te (ilk sayfayla üretilir, sonrası hedefli edit rejimi); sayfa-özel CSS `assets/css/pages/<sayfa>.css`. tokens.css'e yeni token eklemek YASAK (ihtiyaç Lead üzerinden Beyar'a). Ortak dosyalara (tokens.css, main.css, main.js, components.css) full-file overwrite YASAK.
 
 ## Anahtar Dosyalar
