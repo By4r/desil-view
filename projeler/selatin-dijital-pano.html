@@ -81,7 +81,7 @@
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn--primary btn--sm" href="../destek-ol.html">Bağış Yap</a>
+        <a class="btn btn--primary btn--sm" href="../destek-ol.html">Destek Ol</a>
         <button class="nav-toggle" type="button" aria-label="Menüyü aç/kapat" aria-controls="main-nav" aria-expanded="false">
           <span></span>
         </button>
@@ -109,8 +109,16 @@
       </div>
     </section>
 
-    <!-- ===================== DETAY GRID ===================== -->
+    <!-- ===================== PROJE GÖRSELİ (tek görsel — desil.org doğrulaması) ===================== -->
     <section class="section section--white">
+      <div class="container">
+        <div class="media-split-media reveal" role="img" aria-label="Selatin camilerde dijital duyuru panosu uygulaması"
+             style="background-image: url('../assets/img/proje-selatin-pano.webp');"></div>
+      </div>
+    </section>
+
+    <!-- ===================== DETAY GRID (info-card) ===================== -->
+    <section class="section section--tint">
       <div class="container detail-grid">
         <div class="prose reveal">
           <h2>Proje Hakkında</h2>
@@ -119,35 +127,93 @@
           <p>Proje, DESİL'in yenilikçi çözümler üretme anlayışı doğrultusunda; teknolojinin toplumsal ve kültürel bağlama duyarlı biçimde nasıl konumlandırılabileceğine dair somut bir örnek sunmayı amaçlar.</p>
         </div>
         <aside class="detail-meta reveal" aria-label="Proje bilgileri">
-          <dl>
-            <div><dt>Alan</dt><dd>Dijital Çözüm</dd></div>
-            <div><dt>Başlangıç</dt><dd>01.03.2026</dd></div>
-            <div><dt>Durum</dt><dd>Planlanan</dd></div>
-          </dl>
+          <div class="info-cards">
+            <div class="info-card">
+              <span class="info-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </span>
+              <span class="info-card-label">Alan</span>
+              <span class="info-card-value">Dijital Çözüm</span>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              <span class="info-card-label">Başlangıç</span>
+              <span class="info-card-value">01.03.2026</span>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h11l-2 4 2 4H5"/></svg>
+              </span>
+              <span class="info-card-label">Durum</span>
+              <span class="info-card-value">Planlanan</span>
+            </div>
+          </div>
           <a class="btn btn--primary" href="../destek-ol.html">Projeye Destek Ol</a>
         </aside>
       </div>
     </section>
 
-    <!-- ===================== DESTEK CTA ===================== -->
-    <section class="section section--dark support" aria-labelledby="support-title">
-      <div class="section-bg">
-        <img src="../assets/img/atmosfer-dijital-ag.jpg" alt="" loading="lazy">
-      </div>
+    <!-- ===================== İLGİLİ PROJELER ===================== -->
+    <section class="section section--white">
       <div class="container">
-        <div class="support-inner reveal">
-          <span class="eyebrow eyebrow--on-dark">Destek Ol</span>
-          <h2 id="support-title">Dijital geleceğe değer katmak için DESİL çalışmalarına destek olun.</h2>
-          <p class="support-lead">Bağışınız, aidatınız ya da kurumsal desteğiniz; sürdürülebilir dijital dönüşüm projelerini birlikte büyütür.</p>
-          <div class="support-actions">
-            <a class="btn btn--white" href="../destek-ol.html">Bağış Yap</a>
-            <a class="btn btn--light" href="../destek-ol.html">Aidat Öde</a>
-            <a class="btn btn--light" href="../destek-ol.html">Kurumsal Destekçi Ol</a>
-          </div>
-          <p class="support-kvkk">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-            Bağış ve destek süreçlerinde kişisel verileriniz KVKK kapsamında korunur.
-          </p>
+        <div class="section-head reveal">
+          <span class="eyebrow">Projeler</span>
+          <h2 class="section-title">İlgili Projeler</h2>
+          <p class="section-lead">DESİL'in sahada yürüttüğü diğer dijital etki projeleri.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="project-card reveal">
+            <div class="project-media" role="img" aria-label="Çaykara farkındalık programı"
+                 style="background-image: url('../assets/img/proje-caykara.webp');"></div>
+            <div class="project-body">
+              <span class="project-kicker">Farkındalık · Çaykara</span>
+              <h3>Bağımlılıkla Mücadele ve Önleyici Farkındalık Programı | Çaykara</h3>
+              <p>Ortaokul ve lise öğrencilerine yönelik önleyici ve bilinçlendirici bir eğitim projesidir.</p>
+              <a class="project-cta" href="caykara.html">Detaylı İncele
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-media" role="img" aria-label="Köklü Miras belgesel-arşiv projesi"
+                 style="background-image: url('../assets/img/proje-koklu-miras.webp');"></div>
+            <div class="project-body">
+              <span class="project-kicker">Kültürel Miras</span>
+              <h3>Köklü Miras</h3>
+              <p>Anadolu'nun kaybolma riski taşıyan sözlü kültür geleneklerini dijital ortamda belgeleyen bir belgesel–arşiv projesidir.</p>
+              <a class="project-cta" href="koklu-miras.html">Detaylı İncele
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-media" role="img" aria-label="Dijital Kültür Köprüsü gençlik girişimi"
+                 style="background-image: url('../assets/img/proje-dijital-kultur-koprusu.webp');"></div>
+            <div class="project-body">
+              <span class="project-kicker">Yapay Zekâ · Kültür</span>
+              <h3>Dijital Kültür Köprüsü</h3>
+              <p>Kültürel değerleri dijital teknolojiler ve yapay zekâ ile geleceğe aktaran bir gençlik girişimidir.</p>
+              <a class="project-cta" href="dijital-kultur-koprusu.html">Detaylı İncele
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DESTEK OL (support-light) ===================== -->
+    <section class="section section--white">
+      <div class="container support-light reveal">
+        <div class="support-light-media" role="img" aria-label="Dijital içerik ve kültür çalışmaları"
+             style="background-image: url('../assets/img/etki-dijital-icerik-kultur.jpg');"></div>
+        <div class="support-light-body">
+          <span class="eyebrow">Destek Ol</span>
+          <h2>Bu projeye destek olarak dijital geleceğe değer katın.</h2>
+          <p>Bağışınız, aidatınız ya da kurumsal desteğiniz; kültürel mirasa saygılı dijital çözümlerin çoğalmasını sağlar.</p>
+          <a class="btn btn--primary" href="../destek-ol.html">Destek Ol</a>
         </div>
       </div>
     </section>
@@ -213,7 +279,7 @@
   </footer>
 
   <div class="sticky-donate">
-    <a class="btn btn--primary" href="../destek-ol.html">Bağış Yap</a>
+    <a class="btn btn--primary" href="../destek-ol.html">Destek Ol</a>
   </div>
 
   <script src="../assets/js/main.js" defer></script>

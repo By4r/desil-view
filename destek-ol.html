@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destek Ol | DESİL</title>
-  <meta name="description" content="Bağışınız, aidatınız ya da kurumsal desteğiniz; sürdürülebilir dijital dönüşüm projelerini birlikte büyütür. Bağış Yap, Aidat Öde, Proje Destekçisi Ol, Kurumsal Destekçi Ol.">
+  <meta name="description" content="Bağışınız, aidatınız ya da kurumsal desteğiniz; sürdürülebilir dijital dönüşüm projelerini birlikte büyütür. Bireysel Bağış Yap, Proje Destekçisi Ol, Kurumsal Destekçi Ol, Gönüllü Destekçi Ol.">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +81,7 @@
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn--primary btn--sm" href="destek-ol.html">Bağış Yap</a>
+        <a class="btn btn--primary btn--sm" href="destek-ol.html">Destek Ol</a>
         <button class="nav-toggle" type="button" aria-label="Menüyü aç/kapat" aria-controls="main-nav" aria-expanded="false">
           <span></span>
         </button>
@@ -91,8 +91,10 @@
 
   <main id="main">
 
-    <!-- ===================== PAGE HERO ===================== -->
-    <section class="page-hero">
+    <!-- ===================== PAGE HERO (--media) ===================== -->
+    <section class="page-hero page-hero--media">
+      <div class="page-hero-bg" role="img" aria-label="Dayanışma ve toplumsal desteğin sembolü — birbirine uzanan eller"
+           style="background-image: url('assets/img/destek-dayanisma-eller.jpg');"></div>
       <div class="container">
         <nav class="breadcrumb" aria-label="Sayfa yolu">
           <a href="index.html">Ana Sayfa</a>
@@ -105,73 +107,125 @@
       </div>
     </section>
 
-    <!-- ===================== BAĞIŞ YAP ===================== -->
-    <section class="section section--white" aria-labelledby="bagis-title">
-      <div class="container">
-        <div class="prose reveal">
-          <h2 id="bagis-title">Bağış Yap</h2>
-          <p>Bağışınız, DESİL'in dijital sürdürülebilirlik, etik teknoloji ve toplumsal fayda ekseninde yürüttüğü projelere doğrudan katkı sağlar. Güncel bağış kanalları ve ödeme bilgileri için bizimle iletişime geçebilirsiniz.</p>
+    <!-- ===================== NEDEN DESTEK OLMALISINIZ (media-split) ===================== -->
+    <section class="section section--white" aria-labelledby="neden-title">
+      <div class="container media-split">
+        <div class="media-split-body">
+          <span class="eyebrow">Neden Destek Olmalısınız</span>
+          <h2 id="neden-title" class="section-title">Desteğiniz doğrudan sahadaki projelere dönüşür</h2>
+          <div class="prose reveal">
+            <p>DESİL, dijital sürdürülebilirlik, etik teknoloji ve toplumsal fayda ekseninde araştırma, eğitim ve saha projeleri yürütür. Bağışınız, aidatınız ya da kurumsal desteğiniz; bu çalışmaların sürdürülebilir şekilde büyümesini sağlar.</p>
+            <p>Güncel bağış kanalları, ödeme seçenekleri ve kurumsal iş birliği detayları için bizimle doğrudan iletişime geçebilirsiniz.</p>
+          </div>
         </div>
-        <div class="support-actions">
-          <a class="btn btn--primary" href="mailto:bilgi@desil.org?subject=Ba%C4%9F%C4%B1%C5%9F%20Hakk%C4%B1nda">E-posta Gönder</a>
-          <a class="btn btn--ghost" href="tel:+902166066895">Bizi Arayın</a>
-        </div>
-        <p class="support-kvkk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          Bağış ve destek süreçlerinde kişisel verileriniz KVKK kapsamında korunur.
-        </p>
+        <div class="media-split-media reveal" role="img" aria-label="DESİL ekibi bir arada"
+             style="background-image: url('assets/img/kurumsal-ekip-bulusmasi.jpg');"></div>
       </div>
     </section>
 
-    <!-- ===================== AİDAT ÖDE ===================== -->
-    <section class="section section--tint" aria-labelledby="aidat-title">
+    <!-- ===================== 4 DESTEK TÜRÜ (pathway-card) ===================== -->
+    <section class="section section--tint" aria-labelledby="destek-turleri-title">
       <div class="container">
-        <div class="prose reveal">
-          <h2 id="aidat-title">Aidat Öde</h2>
-          <p>Aidat ödeme süreci yalnızca DESİL'in mevcut üyeleri için geçerlidir; bu alan yeni üyelik başvurusu için kullanılmaz. Aidatınızı ödemek için bizimle iletişime geçebilirsiniz.</p>
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Destek Türleri</span>
+          <h2 id="destek-turleri-title" class="section-title">Size uygun destek yolunu seçin</h2>
+          <p class="section-lead">Bireysel, proje bazlı, kurumsal ya da gönüllü katkı — her destek biçimi DESİL çalışmalarını büyütür.</p>
         </div>
-        <div class="support-actions">
-          <a class="btn btn--primary" href="mailto:bilgi@desil.org?subject=Aidat%20%C3%96deme%20Hakk%C4%B1nda">E-posta Gönder</a>
-          <a class="btn btn--ghost" href="tel:+902166066895">Bizi Arayın</a>
+        <div class="grid grid-2 pathway-grid">
+          <a class="pathway-card reveal" href="#iletisim">
+            <span class="pathway-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"/></svg>
+            </span>
+            <h3>Bireysel Bağış Yap</h3>
+            <p>Bağışınız, DESİL'in dijital sürdürülebilirlik, etik teknoloji ve toplumsal fayda ekseninde yürüttüğü projelere doğrudan katkı sağlar.</p>
+            <span class="pathway-cta">Bizimle İletişime Geçin
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a class="pathway-card reveal" href="#iletisim">
+            <span class="pathway-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+            </span>
+            <h3>Proje Destekçisi Ol</h3>
+            <p>DESİL'in sahada yürüttüğü projelere doğrudan destek olmak isteyen bireyler ve kurumlar, destek olmak istedikleri çalışmayı bizimle paylaşabilir.</p>
+            <span class="pathway-cta">Proje Destekçisi Olun
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a class="pathway-card reveal" href="#form">
+            <span class="pathway-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></svg>
+            </span>
+            <h3>Kurumsal Destekçi Ol</h3>
+            <p>Kurumunuzla DESİL'in dijital dönüşüm ve sürdürülebilirlik çalışmalarına destek olabilir, kurumsal iş birliği için bizi arayabilirsiniz.</p>
+            <span class="pathway-cta">Kurumsal Destekçi Olun
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a class="pathway-card reveal" href="#iletisim">
+            <span class="pathway-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.7.5 4.5 2.6 4.5 5.8"/></svg>
+            </span>
+            <h3>Gönüllü Destekçi Ol</h3>
+            <p>DESİL'in saha çalışmalarına gönüllü olarak katkı sağlamak isteyenler, ilgi alanlarını bizimle paylaşarak sürece dahil olabilir.</p>
+            <span class="pathway-cta">Bizimle İletişime Geçin
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ===================== PROJE DESTEKÇİSİ OL ===================== -->
-    <section class="section section--white" aria-labelledby="proje-destek-title">
+    <!-- ===================== İLETİŞİM YÖNLENDİRME ===================== -->
+    <section class="section section--white" id="iletisim" aria-labelledby="iletisim-title">
       <div class="container">
-        <div class="prose reveal">
-          <h2 id="proje-destek-title">Proje Destekçisi Ol</h2>
-          <p>DESİL'in sahada yürüttüğü projelere doğrudan destek olmak isteyen bireyler ve kurumlar, güncel projelerimizi inceleyip destek olmak istedikleri çalışmayı bizimle paylaşabilir.</p>
+        <div class="section-head reveal">
+          <span class="eyebrow">İletişim</span>
+          <h2 id="iletisim-title" class="section-title">Bizimle İletişime Geçin</h2>
+          <p class="section-lead">Destek süreciyle ilgili sorularınız için bize doğrudan ulaşabilirsiniz.</p>
         </div>
-        <div class="support-actions">
-          <a class="btn btn--primary" href="projeler.html">Projeleri İncele</a>
-          <a class="btn btn--ghost" href="mailto:bilgi@desil.org?subject=Proje%20Destek%C3%A7isi%20Olmak%20%C4%B0stiyorum">İletişime Geçin</a>
+        <div class="list-rows">
+          <a class="list-row reveal" href="tel:+902166066895">
+            <span class="list-row-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l2 5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 1-2Z"/></svg>
+            </span>
+            <span class="list-row-body">
+              <span class="list-row-title">Bizi Arayın</span>
+              <span class="list-row-desc">0216 606 68 95</span>
+            </span>
+            <svg class="list-row-arrow" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="list-row reveal" href="mailto:bilgi@desil.org">
+            <span class="list-row-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <span class="list-row-body">
+              <span class="list-row-title">E-posta Gönderin</span>
+              <span class="list-row-desc">bilgi@desil.org</span>
+            </span>
+            <svg class="list-row-arrow" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ===================== KURUMSAL DESTEKÇİ OL ===================== -->
-    <section class="section section--tint" aria-labelledby="kurumsal-destek-title">
+    <!-- ===================== BİZ SİZİ ARAYALIM (form) ===================== -->
+    <section class="section section--tint" id="form" aria-labelledby="form-title">
       <div class="container">
-        <div class="prose reveal">
-          <h2 id="kurumsal-destek-title">Kurumsal Destekçi Ol</h2>
-          <p>Kurumunuzla DESİL'in dijital dönüşüm ve sürdürülebilirlik çalışmalarına destek olmak için aşağıdaki formu doldurabilirsiniz.</p>
+        <div class="section-head reveal">
+          <span class="eyebrow">Biz Sizi Arayalım</span>
+          <h2 id="form-title" class="section-title">Biz Sizi Arayalım</h2>
+          <p class="section-lead">Ad soyad, telefon ve destek konunuzu bırakın; en kısa sürede sizinle iletişime geçelim.</p>
         </div>
 
         <form class="form reveal" action="mailto:bilgi@desil.org" method="get">
           <div class="form-grid">
             <div class="form-field">
-              <label for="f-kurum">Kurum Adı</label>
-              <input class="input" type="text" id="f-kurum" name="kurum" autocomplete="organization">
-            </div>
-            <div class="form-field">
-              <label for="f-yetkili">Yetkili Kişi</label>
-              <input class="input" type="text" id="f-yetkili" name="yetkili" autocomplete="name">
-            </div>
-            <div class="form-field">
-              <label for="f-eposta">E-posta</label>
-              <input class="input" type="email" id="f-eposta" name="eposta" autocomplete="email">
+              <label for="f-ad">Ad Soyad</label>
+              <input class="input" type="text" id="f-ad" name="ad" autocomplete="name">
             </div>
             <div class="form-field">
               <label for="f-telefon">Telefon</label>
@@ -180,11 +234,13 @@
           </div>
           <div class="form-field">
             <label for="f-konu">Destek Konusu</label>
-            <input class="input" type="text" id="f-konu" name="konu">
-          </div>
-          <div class="form-field">
-            <label for="f-mesaj">Mesajınız</label>
-            <textarea class="input" id="f-mesaj" name="mesaj" rows="6"></textarea>
+            <select class="input" id="f-konu" name="konu">
+              <option value="Bireysel Bağış">Bireysel Bağış</option>
+              <option value="Proje Destekçiliği">Proje Destekçiliği</option>
+              <option value="Kurumsal Destekçilik">Kurumsal Destekçilik</option>
+              <option value="Gönüllülük">Gönüllülük</option>
+              <option value="Diğer">Diğer</option>
+            </select>
           </div>
           <div class="form-check">
             <input type="checkbox" id="f-kvkk" name="kvkk_onay" required>
@@ -256,9 +312,9 @@
     </div>
   </footer>
 
-  <!-- Mobil sticky "Bağış Yap" -->
+  <!-- Mobil sticky "Destek Ol" -->
   <div class="sticky-donate">
-    <a class="btn btn--primary" href="destek-ol.html">Bağış Yap</a>
+    <a class="btn btn--primary" href="destek-ol.html">Destek Ol</a>
   </div>
 
   <script src="assets/js/main.js" defer></script>
