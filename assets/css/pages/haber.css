@@ -1,0 +1,9 @@
+/* === HABER DETAY — 3 sayfanın ortak sayfa-özel düzeni (R4 m.11) =========
+   Lead onaylı TEK istisna: haber başlıkları uzun olduğu için page-title'ın
+   components.md §2'deki 22ch sınırı burada 34ch'e gevşetilir. Component
+   tanımı DEĞİŞMEDİ (components.css'e dokunulmadı) — yalnız bu sayfa grubunda
+   geçerli bir düzen override'ı. */
+.page-hero--media .page-title { max-width: 34ch; }
+
+/* İlgili Haberler grid'inde 2 kart ortalı/dengeli dursun diye üst sınır */
+.related-news-grid { max-width: 900px; margin-inline: auto; }

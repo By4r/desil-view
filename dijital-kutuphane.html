@@ -78,7 +78,6 @@
           <li><a href="projeler.html">Projeler</a></li>
           <li><a href="dijital-etki-lab.html">Dijital Etki Lab</a></li>
           <li><a href="dijital-kutuphane.html" aria-current="page">Dijital Kütüphane</a></li>
-          <li><a href="destek-ol.html">Destek Ol</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
       </nav>
@@ -124,8 +123,7 @@
             <button type="button" role="tab" id="tab-duyurular" aria-controls="panel-duyurular" aria-selected="true">Duyurular</button>
             <button type="button" role="tab" id="tab-haberler" aria-controls="panel-haberler" aria-selected="false" tabindex="-1">Haberler</button>
             <button type="button" role="tab" id="tab-yayinlar" aria-controls="panel-yayinlar" aria-selected="false" tabindex="-1">Yayınlarımız</button>
-            <button type="button" role="tab" id="tab-kaynaklar" aria-controls="panel-kaynaklar" aria-selected="false" tabindex="-1">Kurumsal Kaynaklar</button>
-            <button type="button" role="tab" id="tab-markalama" aria-controls="panel-markalama" aria-selected="false" tabindex="-1">Markalama</button>
+            <button type="button" role="tab" id="tab-kaynaklar" aria-controls="panel-kaynaklar" aria-selected="false" tabindex="-1">Kurumsal Kimlik</button>
           </div>
 
           <!-- ===== DUYURULAR (empty-state) ===== -->
@@ -142,30 +140,33 @@
           <!-- ===== HABERLER (news-card, mevcut 3 gerçek haber) ===== -->
           <div class="content-tabs-panel" role="tabpanel" id="panel-haberler" aria-labelledby="tab-haberler">
             <div class="grid grid-3">
-              <a class="news-card reveal" href="https://desil.org/duyuru-ve-haberler" target="_blank" rel="noopener">
+              <a class="news-card reveal" href="haberler/udgd-is-birligi-sozlesmesi.html">
                 <div class="news-media" role="img" aria-label="UDGD iş birliği sözleşmesi imza töreni"
                      style="background-image: url('assets/img/haber-udgd-isbirligi.webp');"></div>
                 <div class="news-body">
                   <span class="news-date">21.08.2025</span>
                   <h3>DESİL ile Uluslararası Dijital Girişimcilik Derneği Arasında İş Birliği Sözleşmesi İmzalandı</h3>
+                  <p class="news-desc">İmzalanan sözleşme ile taraflar; dijital girişimcilik, sürdürülebilirlik ve liderlik alanlarında ortak projeler geliştirmeyi ve kurumsal iş birliklerini güçlendirmeyi hedefliyor.</p>
                 </div>
               </a>
 
-              <a class="news-card reveal" href="https://desil.org/duyuru-ve-haberler" target="_blank" rel="noopener">
+              <a class="news-card reveal" href="haberler/dijital-kultur-koprusu-protokolu.html">
                 <div class="news-media" role="img" aria-label="Balkan Studies Foundation protokol imzası"
                      style="background-image: url('assets/img/haber-balkan-protokol.webp');"></div>
                 <div class="news-body">
                   <span class="news-date">20.08.2025</span>
                   <h3>DESİL ve Balkan Studies Foundation Arasında “Dijital Kültür Köprüsü” İş Birliği Protokolü İmzalandı</h3>
+                  <p class="news-desc">Anlaşma, Türkiye ile Balkan ülkeleri arasında ortak tarihî ve kültürel bağların çağın imkânlarıyla belgelenmesini ve yaygınlaştırılmasını hedefliyor.</p>
                 </div>
               </a>
 
-              <a class="news-card reveal" href="https://desil.org/duyuru-ve-haberler" target="_blank" rel="noopener">
+              <a class="news-card reveal" href="haberler/yk-2026-ilk-toplantisi.html">
                 <div class="news-media" role="img" aria-label="DESİL Yönetim Kurulu 2026 ilk toplantısı"
                      style="background-image: url('assets/img/haber-yk-2026.webp');"></div>
                 <div class="news-body">
                   <span class="news-date">21.01.2026</span>
                   <h3>DESİL Yönetim Kurulu, 2026 Yılının İlk Toplantısını Gerçekleştirdi</h3>
+                  <p class="news-desc">Toplantıda derneğin 2026 yılı boyunca yürütülmesi planlanan projeler ve stratejik yol haritası ele alındı.</p>
                 </div>
               </a>
             </div>
@@ -182,25 +183,112 @@
             </div>
           </div>
 
-          <!-- ===== KURUMSAL KAYNAKLAR (empty-state) ===== -->
+          <!-- ===== KURUMSAL KİMLİK (download-card grid, demo) ===== -->
           <div class="content-tabs-panel" role="tabpanel" id="panel-kaynaklar" aria-labelledby="tab-kaynaklar">
-            <div class="empty-state reveal">
-              <span class="empty-state-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-              </span>
-              <h3>Kurumsal kaynaklar yakında</h3>
-              <p>Kurumsal kimlik ve tanıtım dosyalarımız hazırlandıkça bu alanda erişime açılacaktır.</p>
-            </div>
-          </div>
+            <div class="download-cards">
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 20"/></svg>
+                  </span>
+                  <span class="download-format">PNG</span>
+                </span>
+                <span class="download-title">DESİL Logo — PNG</span>
+                <span class="download-desc">Şeffaf arka planlı, dijital kullanım için yüksek çözünürlüklü logo dosyası.</span>
+                <span class="download-meta">PNG · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
 
-          <!-- ===== MARKALAMA (empty-state) ===== -->
-          <div class="content-tabs-panel" role="tabpanel" id="panel-markalama" aria-labelledby="tab-markalama">
-            <div class="empty-state reveal">
-              <span class="empty-state-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="17" r="2.5"/><circle cx="6" cy="17" r="2.5"/><path d="M13.5 9v1a4 4 0 0 1-4 4H8"/><path d="m10 14-1.5 3"/></svg>
-              </span>
-              <h3>Markalama rehberi yakında</h3>
-              <p>DESİL marka ve kullanım kılavuzu tamamlandığında bu alanda yayınlanacaktır.</p>
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 20"/></svg>
+                  </span>
+                  <span class="download-format">JPEG</span>
+                </span>
+                <span class="download-title">DESİL Logo — JPEG</span>
+                <span class="download-desc">Baskı ve sunum dosyalarında kullanıma hazır, sabit zeminli logo sürümü.</span>
+                <span class="download-meta">JPEG · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
+
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg>
+                  </span>
+                  <span class="download-format">PDF</span>
+                </span>
+                <span class="download-title">DESİL Logo — PDF</span>
+                <span class="download-desc">Vektör kalitesinde, ölçeklenebilir baskı ve tasarım dosyası.</span>
+                <span class="download-meta">PDF · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
+
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19 19 12l3 3-7 7-3-3Z"/><path d="M18 13 16.5 5.5 2 2l3.5 14.5L13 18l5-5Z"/><circle cx="11" cy="11" r="2"/></svg>
+                  </span>
+                  <span class="download-format">AI/EPS</span>
+                </span>
+                <span class="download-title">DESİL Logo — Vektörel (AI/EPS)</span>
+                <span class="download-desc">Profesyonel tasarım araçlarında düzenlenebilir katmanlı vektör dosyası.</span>
+                <span class="download-meta">AI/EPS · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
+
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 20"/></svg>
+                  </span>
+                  <span class="download-format">SVG</span>
+                </span>
+                <span class="download-title">DESİL Logo — SVG</span>
+                <span class="download-desc">Web ve dijital arayüzlerde her boyutta net görünüm sağlayan vektör formatı.</span>
+                <span class="download-meta">SVG · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
+
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg>
+                  </span>
+                  <span class="download-format">PDF</span>
+                </span>
+                <span class="download-title">Renk Kodları</span>
+                <span class="download-desc">Kurumsal kimlik renk paletinin HEX, RGB ve CMYK karşılıklarını içeren referans dosyası.</span>
+                <span class="download-meta">PDF · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
+
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg>
+                  </span>
+                  <span class="download-format">PDF</span>
+                </span>
+                <span class="download-title">Logo Kullanım Kılavuzu</span>
+                <span class="download-desc">Logonun doğru kullanım alanlarını, boşluk kurallarını ve yasaklı kullanımları anlatan kılavuz.</span>
+                <span class="download-meta">PDF · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
+
+              <a class="download-card reveal" href="#" aria-disabled="true" title="İndirme yakında etkinleşecek">
+                <span class="download-top">
+                  <span class="download-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M9 4v2M9 8v2M9 12v2M9 16v2"/></svg>
+                  </span>
+                  <span class="download-format">ZIP</span>
+                </span>
+                <span class="download-title">Kurumsal Kimlik Dosyası</span>
+                <span class="download-desc">Tüm logo formatlarını, renk kodlarını ve kullanım kılavuzunu bir arada sunan arşiv dosyası.</span>
+                <span class="download-meta">ZIP · Yakında</span>
+                <span class="btn btn--ghost btn--sm">İndir</span>
+              </a>
             </div>
           </div>
         </div>
