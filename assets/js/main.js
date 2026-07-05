@@ -299,6 +299,34 @@
   window.addEventListener("load", fitFooter);           // font/logo yüklenince yükseklik oturur
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFooter);
 
+  /* --- İçerik sekmeleri (data-tabs) — jenerik, R3 ----------------------- */
+  var tabRoots = document.querySelectorAll("[data-tabs]");
+  Array.prototype.forEach.call(tabRoots, function (root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab); });
+      tab.addEventListener("keydown", function (e) {
+        var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!dir) return;
+        e.preventDefault();
+        select(tabs[(i + dir + tabs.length) % tabs.length], true);
+      });
+    });
+    var initial = tabs.filter(function (t) { return t.getAttribute("aria-selected") === "true"; })[0];
+    select(initial || tabs[0]);
+  });
+
   /* --- Footer yılı ------------------------------------------------------ */
   var yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
