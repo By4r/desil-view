@@ -84,7 +84,7 @@
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn--primary btn--sm" href="destek-ol.html">Bağış Yap</a>
+        <a class="btn btn--primary btn--sm" href="destek-ol.html">Destek Ol</a>
         <button class="nav-toggle" type="button" aria-label="Menüyü aç/kapat" aria-controls="main-nav" aria-expanded="false">
           <span></span>
         </button>
@@ -95,7 +95,9 @@
   <main id="main">
 
     <!-- ===================== PAGE HERO ===================== -->
-    <section class="page-hero">
+    <section class="page-hero page-hero--media">
+      <div class="page-hero-bg" role="img" aria-label="Uzaydan gece dünyasında dijital ağ bağlantıları"
+           style="background-image: url('assets/img/atmosfer-dijital-ag.jpg');"></div>
       <div class="container">
         <nav class="breadcrumb" aria-label="Sayfa yolu">
           <a href="index.html">Ana Sayfa</a>
@@ -108,83 +110,82 @@
       </div>
     </section>
 
-    <!-- ===================== LAB SATIRLARI (koyu, lab-rows) ===================== -->
-    <section class="section section--dark" aria-labelledby="lab-title">
-      <div class="section-bg">
-        <video data-bg muted loop playsinline preload="none" aria-hidden="true">
-          <source src="assets/video/lab-veri-agi.mp4" type="video/mp4">
-        </video>
-      </div>
+    <!-- ===================== LAB BAŞLIKLARI (açık zemin, list-row — koyu lab-card'ın açık karşılığı) ===================== -->
+    <section class="section section--white" aria-labelledby="lab-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow eyebrow--on-dark">Lab Başlıkları</span>
+          <span class="eyebrow">Lab Başlıkları</span>
           <h2 class="section-title" id="lab-title">Dört başlıkta editoryal bakış</h2>
           <p class="section-lead">Dijital Etki Lab, dört ana başlıkta DESİL ekibinin gözlem ve değerlendirmelerini bir araya getirir.</p>
         </div>
 
-        <div class="lab-rows">
-          <article class="lab-card reveal">
-            <div class="lab-icon" aria-hidden="true">
+        <div class="list-rows">
+          <div class="list-row reveal">
+            <span class="list-row-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-            </div>
-            <h3>Etki Radarı</h3>
-            <p>Dijital sürdürülebilirlik, etik teknoloji ve toplumsal fayda alanındaki öne çıkan başlıkları düzenli aralıklarla tarar ve kısa bir özet hâlinde paylaşırız.</p>
-          </article>
-          <article class="lab-card reveal">
-            <div class="lab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 21h6M12 17v4"/><path d="M8.5 11.5 11 9l2 2 2.5-3"/></svg>
-            </div>
-            <h3>AI Perspektif</h3>
-            <p>Yapay zekânın sürdürülebilirliğe ve topluma etkisine dair perspektifler paylaşırız; bunlar otomatik bir analiz motorunun değil, DESİL'in editoryal değerlendirmesinin ürünüdür.</p>
-          </article>
-          <article class="lab-card reveal">
-            <div class="lab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z"/><path d="M13 2v5h5"/><path d="M9 13h6M9 16h4"/></svg>
-            </div>
-            <h3>Sürdürülebilirlik Notları</h3>
-            <p>Dijital sürdürülebilirlik üzerine kısa notlar, okuma önerileri ve DESİL'in bu alandaki çalışmalarından derlediği gözlemleri buradan takip edebilirsiniz.</p>
-          </article>
-          <article class="lab-card reveal">
-            <div class="lab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg>
-            </div>
-            <h3>Veriyle Etki</h3>
-            <p>Çalışmalarımızı veriyle okuma ve etkiyi görünür kılma denemelerimizi, DESİL ekibinin hazırladığı kısa değerlendirmelerle paylaşırız.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== EDİTORYAL YAKLAŞIM (prose) ===================== -->
-    <section class="section section--white" aria-labelledby="yaklasim-title">
-      <div class="container">
-        <div class="prose reveal">
-          <h2 id="yaklasim-title">Editoryal bir bakış, otomatik bir motor değil</h2>
-          <p>Dijital Etki Lab; yapay zekâ, dijital sürdürülebilirlik ve etik teknoloji alanındaki gelişmeleri DESİL ekibinin editoryal değerlendirmesiyle bir araya getiren bir içerik alanıdır. Burada paylaşılan başlıklar, otomatik bir analiz motorunun ya da gerçek zamanlı bir skorlama sisteminin çıktısı değildir; DESİL'in gözlem ve yorumlarına dayanır.</p>
-          <p>Amacımız, dijital dönüşümün toplum ve çevre üzerindeki etkilerine dair abartısız, dengeli ve sorumlu bir bakış sunmaktır.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== DESTEK CTA ===================== -->
-    <section class="section section--dark support" aria-labelledby="support-title">
-      <div class="section-bg">
-        <img src="assets/img/atmosfer-dijital-ag.jpg" alt="" loading="lazy">
-      </div>
-      <div class="container">
-        <div class="support-inner reveal">
-          <span class="eyebrow eyebrow--on-dark">Destek Ol</span>
-          <h2 id="support-title">Dijital geleceğe değer katmak için DESİL çalışmalarına destek olun.</h2>
-          <p class="support-lead">Bağışınız, aidatınız ya da kurumsal desteğiniz; sürdürülebilir dijital dönüşüm projelerini birlikte büyütür.</p>
-          <div class="support-actions">
-            <a class="btn btn--white" href="destek-ol.html">Bağış Yap</a>
-            <a class="btn btn--light" href="destek-ol.html">Aidat Öde</a>
-            <a class="btn btn--light" href="destek-ol.html">Kurumsal Destekçi Ol</a>
+            </span>
+            <span class="list-row-body">
+              <span class="list-row-title">Etki Radarı</span>
+              <span class="list-row-desc">Dijital sürdürülebilirlik, etik teknoloji ve toplumsal fayda alanındaki öne çıkan başlıkları düzenli aralıklarla tarar ve kısa bir özet hâlinde paylaşırız.</span>
+            </span>
           </div>
-          <p class="support-kvkk">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-            Bağış ve destek süreçlerinde kişisel verileriniz KVKK kapsamında korunur.
-          </p>
+          <div class="list-row reveal">
+            <span class="list-row-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 21h6M12 17v4"/><path d="M8.5 11.5 11 9l2 2 2.5-3"/></svg>
+            </span>
+            <span class="list-row-body">
+              <span class="list-row-title">AI Perspektif</span>
+              <span class="list-row-desc">Yapay zekânın sürdürülebilirliğe ve topluma etkisine dair perspektifler paylaşırız; bunlar otomatik bir analiz motorunun değil, DESİL'in editoryal değerlendirmesinin ürünüdür.</span>
+            </span>
+          </div>
+          <div class="list-row reveal">
+            <span class="list-row-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z"/><path d="M13 2v5h5"/><path d="M9 13h6M9 16h4"/></svg>
+            </span>
+            <span class="list-row-body">
+              <span class="list-row-title">Sürdürülebilirlik Notları</span>
+              <span class="list-row-desc">Dijital sürdürülebilirlik üzerine kısa notlar, okuma önerileri ve DESİL'in bu alandaki çalışmalarından derlediği gözlemleri buradan takip edebilirsiniz.</span>
+            </span>
+          </div>
+          <div class="list-row reveal">
+            <span class="list-row-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg>
+            </span>
+            <span class="list-row-body">
+              <span class="list-row-title">Veriyle Etki</span>
+              <span class="list-row-desc">Çalışmalarımızı veriyle okuma ve etkiyi görünür kılma denemelerimizi, DESİL ekibinin hazırladığı kısa değerlendirmelerle paylaşırız.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDİTORYAL BAKIŞ (açık mavi, media-split) ===================== -->
+    <section class="section section--tint" aria-labelledby="yaklasim-title">
+      <div class="container media-split">
+        <div class="media-split-body">
+          <span class="eyebrow">Editoryal Bakış</span>
+          <h2 id="yaklasim-title" class="section-title">Editoryal bir bakış, otomatik bir motor değil</h2>
+          <div class="prose reveal">
+            <p>Dijital Etki Lab; yapay zekâ, dijital sürdürülebilirlik ve etik teknoloji alanındaki gelişmeleri DESİL ekibinin editoryal değerlendirmesiyle bir araya getiren bir içerik alanıdır. Burada paylaşılan başlıklar, otomatik bir analiz motorunun ya da gerçek zamanlı bir skorlama sisteminin çıktısı değildir; DESİL'in gözlem ve yorumlarına dayanır.</p>
+            <p>Amacımız, dijital dönüşümün toplum ve çevre üzerindeki etkilerine dair abartısız, dengeli ve sorumlu bir bakış sunmaktır.</p>
+          </div>
+        </div>
+        <div class="media-split-media reveal" role="img" aria-label="Not defterine elle yazı yazan bir kişi"
+             style="background-image: url('assets/img/lab-editoryal-not-defteri.jpg');"></div>
+      </div>
+    </section>
+
+    <!-- ===================== DESTEK ÇAĞRISI (support-light) ===================== -->
+    <section class="section section--white">
+      <div class="container support-light reveal">
+        <div class="support-light-media" role="img" aria-label="DESİL ekibi dijital iş birliği içinde çalışıyor"
+             style="background-image: url('assets/img/dijital-isbirligi-ekip.jpg');"></div>
+        <div class="support-light-body">
+          <span class="eyebrow">Destek Ol</span>
+          <h2>Dijital geleceğe değer katmak için DESİL çalışmalarına destek olun.</h2>
+          <p>Bağışınız, aidatınız ya da kurumsal desteğiniz; sürdürülebilir dijital dönüşüm projelerini birlikte büyütür.</p>
+          <a class="btn btn--primary" href="destek-ol.html">Destek Ol</a>
         </div>
       </div>
     </section>
@@ -250,9 +251,9 @@
     </div>
   </footer>
 
-  <!-- Mobil sticky "Bağış Yap" -->
+  <!-- Mobil sticky "Destek Ol" -->
   <div class="sticky-donate">
-    <a class="btn btn--primary" href="destek-ol.html">Bağış Yap</a>
+    <a class="btn btn--primary" href="destek-ol.html">Destek Ol</a>
   </div>
 
   <script src="assets/js/main.js" defer></script>
