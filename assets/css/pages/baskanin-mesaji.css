@@ -1,0 +1,6 @@
+/* === BAŞKANIN MESAJI — sayfaya özgü düzen (R3 Faz 2) =====================
+   Başkan fotoğrafı eldeki tek varlık (yk-yasin-yavuz.webp, 300×300 kare) —
+   upscale/büyütme yasağı gereği kart genişliği kaynağın piksel genişliğini
+   aşmayacak şekilde sabitlenir (bkz. tasks/handoff.md FE-A notu). */
+.baskan-split { align-items: start; }
+.baskan-photo { max-width: 280px; justify-self: center; }

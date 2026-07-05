@@ -1,0 +1,5 @@
+/* === İLETİŞİM — sayfaya özgü düzen (R3 Faz 2) =============================
+   list-rows (3 satır) form sütunundan kısa kalıp sağda boşluk bırakıyordu;
+   harita entegrasyonu yok (API/JS bağımlılığı istenmiyor) — mevcut media-ph
+   deseni "yakında" notuyla sütunu tamamlar, yeni component icat edilmedi. */
+.contact-map-ph { min-height: 200px; }
