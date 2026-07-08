@@ -6,19 +6,18 @@
    satırındaki background-image tek noktadan değişir. */
 
 /* --- (a) açılış kompozisyonu: portre + mesajın ilk yarısı ---
-   Foto SAĞDA, metin SOLDA (S-R4-2 karar notu, FE-A screenshot karşılaştırması):
-   H2 hemen sayfa akışına devam eder (page-hero'dan sonra ikinci büyük görselle
-   karşılaşmadan), portre sağda "imza" gibi duruyor; dekoratif çerçevenin
-   sağ-alt taşması sayfa kenar boşluğuna doğru rahat nefes alıyor. */
+   Foto SOLDA, metin SAĞDA (Beyar direktifi 2026-07-08): portre "imza" gibi
+   solda durur, mesaj metni sağda iki yana yaslı (justify) akar. */
 .baskan-intro { align-items: center; }
-.baskan-intro .baskan-portrait { order: 1; }
-.baskan-intro .media-split-body { order: 0; }
+.baskan-intro .baskan-portrait { order: 0; }
+.baskan-intro .media-split-body { order: 1; }
+.baskan-intro .prose { text-align: justify; }
 .baskan-portrait {
   position: relative;
   justify-self: center;
   width: 100%;
-  max-width: 340px;
-  padding: 28px 0 28px 28px;
+  max-width: 420px;
+  padding: 31px 0 31px 31px;
 }
 .baskan-portrait-frame {
   position: absolute;
@@ -30,7 +29,8 @@
 }
 .baskan-portrait-photo {
   position: relative; z-index: 1;
-  width: 300px; height: 300px;
+  width: 100%; height: auto;
+  aspect-ratio: 1 / 1;
   margin: 0 auto;
   border-radius: var(--radius-lg);
   background: var(--brand-soft) center/cover no-repeat;
@@ -58,11 +58,13 @@
   color: var(--ink-muted);
 }
 @media (max-width: 640px) {
-  .baskan-portrait { max-width: 280px; padding: 20px 0 20px 20px; }
-  .baskan-portrait-photo { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  .baskan-portrait { max-width: 320px; padding: 20px 0 20px 20px; }
 }
 
-/* --- (b) tam genişlik alıntı bandı --- */
+/* --- (b) tam genişlik alıntı bandı ---
+   Bant dikeyde daha dar (Beyar direktifi 2026-07-08): section dikey boşluğu
+   azaltılır, alıntı yatayda nefes almaya devam eder. */
+.baskan-quote-section { padding-block: var(--space-8); }
 .baskan-quote-band { max-width: 760px; margin-inline: auto; text-align: center; }
 .baskan-quote-band .intro-quote {
   margin-top: 0; padding: 0; background: none; border-left: 0; border-radius: 0;
